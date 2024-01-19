@@ -9,7 +9,7 @@ Note that all documentation is licensed as CC-BY-SA-2.5
 
 https://creativecommons.org/licenses/by-sa/2.5/
 """
-from typing import Any, Optional
+from typing import Any, Optional, Dict
 from ..__tag_base import Tag, SelfClosingTag, StylableTag
 
 class html(Tag):
@@ -33,9 +33,9 @@ class html(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -51,12 +51,12 @@ class html(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -84,10 +84,10 @@ class base(SelfClosingTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base)
         """
-        attributes |= {
+        attributes.update({
             'href': href,
             'target': target,
-        }
+        })
         super().__init__(**attributes)
 
     def __call__(
@@ -105,13 +105,13 @@ class base(SelfClosingTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base)
         """
-        attributes |= {
+        attributes.update({
             'href': href,
             'target': target,
-        }
+        })
         return super().__call__(**attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {'href': None, 'target': None}
 
 
@@ -136,9 +136,9 @@ class head(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -154,12 +154,12 @@ class head(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -187,10 +187,10 @@ class link(SelfClosingTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link)
         """
-        attributes |= {
+        attributes.update({
             'href': href,
             'rel': rel,
-        }
+        })
         super().__init__(**attributes)
 
     def __call__(
@@ -208,13 +208,13 @@ class link(SelfClosingTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link)
         """
-        attributes |= {
+        attributes.update({
             'href': href,
             'rel': rel,
-        }
+        })
         return super().__call__(**attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {'href': None, 'rel': None}
 
 
@@ -239,9 +239,9 @@ class meta(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -257,12 +257,12 @@ class meta(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -287,9 +287,9 @@ class style(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style)
         """
-        attributes |= {
+        attributes.update({
             'type': type,
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -305,12 +305,12 @@ class style(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style)
         """
-        attributes |= {
+        attributes.update({
             'type': type,
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {'type': 'text/css'}
 
 
@@ -335,9 +335,9 @@ class title(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -353,12 +353,12 @@ class title(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -383,9 +383,9 @@ class body(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -401,12 +401,12 @@ class body(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -431,9 +431,9 @@ class address(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -449,12 +449,12 @@ class address(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -479,9 +479,9 @@ class article(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -497,12 +497,12 @@ class article(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -527,9 +527,9 @@ class aside(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -545,12 +545,12 @@ class aside(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -575,9 +575,9 @@ class footer(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -593,12 +593,12 @@ class footer(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -623,9 +623,9 @@ class header(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -641,12 +641,12 @@ class header(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -674,12 +674,12 @@ class h1(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -698,15 +698,15 @@ class h1(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -734,12 +734,12 @@ class h2(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h2)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -758,15 +758,15 @@ class h2(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h2)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -794,12 +794,12 @@ class h3(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h3)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -818,15 +818,15 @@ class h3(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h3)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -854,12 +854,12 @@ class h4(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h4)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -878,15 +878,15 @@ class h4(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h4)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -914,12 +914,12 @@ class h5(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h5)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -938,15 +938,15 @@ class h5(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h5)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -974,12 +974,12 @@ class h6(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h6)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -998,15 +998,15 @@ class h6(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h6)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1031,9 +1031,9 @@ class hgroup(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hgroup)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1049,12 +1049,12 @@ class hgroup(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hgroup)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1079,9 +1079,9 @@ class main(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1097,12 +1097,12 @@ class main(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1127,9 +1127,9 @@ class nav(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1145,12 +1145,12 @@ class nav(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1175,9 +1175,9 @@ class section(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1193,12 +1193,12 @@ class section(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1223,9 +1223,9 @@ class search(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/search)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1241,12 +1241,12 @@ class search(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/search)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1271,9 +1271,9 @@ class blockquote(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1289,12 +1289,12 @@ class blockquote(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1319,9 +1319,9 @@ class dd(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1337,12 +1337,12 @@ class dd(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1367,9 +1367,9 @@ class div(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1385,12 +1385,12 @@ class div(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1415,9 +1415,9 @@ class dl(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1433,12 +1433,12 @@ class dl(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1463,9 +1463,9 @@ class dt(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1481,12 +1481,12 @@ class dt(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1511,9 +1511,9 @@ class figcaption(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1529,12 +1529,12 @@ class figcaption(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1559,9 +1559,9 @@ class figure(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1577,12 +1577,12 @@ class figure(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1607,9 +1607,9 @@ class hr(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1625,12 +1625,12 @@ class hr(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1655,9 +1655,9 @@ class li(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1673,12 +1673,12 @@ class li(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1703,9 +1703,9 @@ class menu(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1721,12 +1721,12 @@ class menu(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1751,9 +1751,9 @@ class ol(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1769,12 +1769,12 @@ class ol(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1802,12 +1802,12 @@ class p(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1826,15 +1826,15 @@ class p(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1859,9 +1859,9 @@ class pre(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1877,12 +1877,12 @@ class pre(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1907,9 +1907,9 @@ class ul(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1925,12 +1925,12 @@ class ul(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -1961,13 +1961,13 @@ class a(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             'href': href,
             'target': target,
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -1988,16 +1988,16 @@ class a(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             'href': href,
             'target': target,
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {'href': None, 'target': None}
 
 
@@ -2022,9 +2022,9 @@ class abbr(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2040,12 +2040,12 @@ class abbr(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2073,12 +2073,12 @@ class b(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2097,15 +2097,15 @@ class b(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2130,9 +2130,9 @@ class bdi(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2148,12 +2148,12 @@ class bdi(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2178,9 +2178,9 @@ class bdo(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdo)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2196,12 +2196,12 @@ class bdo(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdo)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2226,9 +2226,9 @@ class br(SelfClosingTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(**attributes)
 
     def __call__(
@@ -2244,12 +2244,12 @@ class br(SelfClosingTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(**attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2274,9 +2274,9 @@ class cite(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2292,12 +2292,12 @@ class cite(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2322,9 +2322,9 @@ class code(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2340,12 +2340,12 @@ class code(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2370,9 +2370,9 @@ class data(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2388,12 +2388,12 @@ class data(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2418,9 +2418,9 @@ class dfn(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2436,12 +2436,12 @@ class dfn(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2469,12 +2469,12 @@ class em(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2493,15 +2493,15 @@ class em(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2529,12 +2529,12 @@ class i(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2553,15 +2553,15 @@ class i(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2586,9 +2586,9 @@ class kbd(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2604,12 +2604,12 @@ class kbd(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2634,9 +2634,9 @@ class mark(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2652,12 +2652,12 @@ class mark(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2682,9 +2682,9 @@ class q(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2700,12 +2700,12 @@ class q(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2730,9 +2730,9 @@ class rp(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rp)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2748,12 +2748,12 @@ class rp(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rp)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2778,9 +2778,9 @@ class rt(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2796,12 +2796,12 @@ class rt(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2826,9 +2826,9 @@ class ruby(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2844,12 +2844,12 @@ class ruby(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2874,9 +2874,9 @@ class s(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2892,12 +2892,12 @@ class s(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2922,9 +2922,9 @@ class samp(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2940,12 +2940,12 @@ class samp(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -2970,9 +2970,9 @@ class small(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -2988,12 +2988,12 @@ class small(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3018,9 +3018,9 @@ class span(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3036,12 +3036,12 @@ class span(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3069,12 +3069,12 @@ class strong(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3093,15 +3093,15 @@ class strong(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3126,9 +3126,9 @@ class sub(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3144,12 +3144,12 @@ class sub(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3174,9 +3174,9 @@ class sup(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3192,12 +3192,12 @@ class sup(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3222,9 +3222,9 @@ class time(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3240,12 +3240,12 @@ class time(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3270,9 +3270,9 @@ class u(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3288,12 +3288,12 @@ class u(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3318,9 +3318,9 @@ class var(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3336,12 +3336,12 @@ class var(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3366,9 +3366,9 @@ class wbr(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3384,12 +3384,12 @@ class wbr(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3414,9 +3414,9 @@ class area(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3432,12 +3432,12 @@ class area(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3462,9 +3462,9 @@ class audio(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3480,12 +3480,12 @@ class audio(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3513,10 +3513,10 @@ class img(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
         """
-        attributes |= {
+        attributes.update({
             'src': src,
             'alt': alt,
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3534,13 +3534,13 @@ class img(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
         """
-        attributes |= {
+        attributes.update({
             'src': src,
             'alt': alt,
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {'src': None, 'alt': None}
 
 
@@ -3565,9 +3565,9 @@ class map(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3583,12 +3583,12 @@ class map(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3613,9 +3613,9 @@ class track(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3631,12 +3631,12 @@ class track(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3661,9 +3661,9 @@ class video(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3679,12 +3679,12 @@ class video(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3709,9 +3709,9 @@ class embed(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3727,12 +3727,12 @@ class embed(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3757,9 +3757,9 @@ class iframe(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3775,12 +3775,12 @@ class iframe(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3805,9 +3805,9 @@ class object(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3823,12 +3823,12 @@ class object(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3853,9 +3853,9 @@ class picture(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3871,12 +3871,12 @@ class picture(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3901,9 +3901,9 @@ class portal(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/portal)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3919,12 +3919,12 @@ class portal(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/portal)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3949,9 +3949,9 @@ class source(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -3967,12 +3967,12 @@ class source(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -3997,9 +3997,9 @@ class canvas(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4015,12 +4015,12 @@ class canvas(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4045,9 +4045,9 @@ class noscript(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4063,12 +4063,12 @@ class noscript(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4093,9 +4093,9 @@ class script(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
         """
-        attributes |= {
+        attributes.update({
             'type': type,
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4111,12 +4111,12 @@ class script(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
         """
-        attributes |= {
+        attributes.update({
             'type': type,
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {'type': 'text/javascript'}
 
 
@@ -4141,9 +4141,9 @@ class del_(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4159,12 +4159,12 @@ class del_(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4189,9 +4189,9 @@ class ins(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4207,12 +4207,12 @@ class ins(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4237,9 +4237,9 @@ class caption(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4255,12 +4255,12 @@ class caption(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4285,9 +4285,9 @@ class col(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4303,12 +4303,12 @@ class col(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4333,9 +4333,9 @@ class colgroup(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4351,12 +4351,12 @@ class colgroup(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4384,12 +4384,12 @@ class table(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4408,15 +4408,15 @@ class table(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4441,9 +4441,9 @@ class tbody(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4459,12 +4459,12 @@ class tbody(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4495,13 +4495,13 @@ class td(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             'colspan': colspan,
             'rowspan': rowspan,
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4522,16 +4522,16 @@ class td(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             'colspan': colspan,
             'rowspan': rowspan,
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {'colspan': None, 'rowspan': None}
 
 
@@ -4556,9 +4556,9 @@ class tfoot(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4574,12 +4574,12 @@ class tfoot(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4613,14 +4613,14 @@ class th(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             'scope': scope,
             'colspan': colspan,
             'rowspan': rowspan,
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4643,17 +4643,17 @@ class th(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             'scope': scope,
             'colspan': colspan,
             'rowspan': rowspan,
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {'scope': None, 'colspan': None, 'rowspan': None}
 
 
@@ -4678,9 +4678,9 @@ class thead(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4696,12 +4696,12 @@ class thead(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4726,9 +4726,9 @@ class tr(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4744,12 +4744,12 @@ class tr(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4780,13 +4780,13 @@ class button(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             'formmethod': formmethod,
             'formaction': formaction,
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4807,16 +4807,16 @@ class button(StylableTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
         """
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
             'formmethod': formmethod,
             'formaction': formaction,
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {'formmethod': None, 'formaction': None}
 
 
@@ -4841,9 +4841,9 @@ class datalist(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4859,12 +4859,12 @@ class datalist(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4889,9 +4889,9 @@ class fieldset(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4907,12 +4907,12 @@ class fieldset(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -4940,10 +4940,9 @@ class form(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
         """
-        attributes |= {
-            'method': method,
+        attributes.update('method': method,
             'action': action,
-        }
+        )
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -4961,13 +4960,13 @@ class form(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
         """
-        attributes |= {
+        attributes.update({
             'method': method,
             'action': action,
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {'method': 'POST', 'action': None}
 
 
@@ -5013,7 +5012,7 @@ class input(SelfClosingTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
         """
-        attributes |= {
+        attributes.update({
             'type': type,
             'name': name,
             'value': value,
@@ -5022,7 +5021,7 @@ class input(SelfClosingTag):
             'required': required,
             'formmethod': formmethod,
             'formaction': formaction,
-        }
+        })
         super().__init__(**attributes)
 
     def __call__(
@@ -5052,7 +5051,7 @@ class input(SelfClosingTag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
         """
-        attributes |= {
+        attributes.update({
             'type': type,
             'name': name,
             'value': value,
@@ -5061,10 +5060,10 @@ class input(SelfClosingTag):
             'required': required,
             'formmethod': formmethod,
             'formaction': formaction,
-        }
+        })
         return super().__call__(**attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {'type': None, 'name': None, 'value': None, 'placeholder': None, 'readonly': False, 'required': False, 'formmethod': None, 'formaction': None}
 
 
@@ -5089,9 +5088,9 @@ class label(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)
         """
-        attributes |= {
+        attributes.update({
             'for_': for_,
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5107,12 +5106,12 @@ class label(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)
         """
-        attributes |= {
+        attributes.update({
             'for_': for_,
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {'for_': None}
 
 
@@ -5137,9 +5136,9 @@ class legend(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5155,12 +5154,12 @@ class legend(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -5185,9 +5184,9 @@ class meter(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5203,12 +5202,12 @@ class meter(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -5233,9 +5232,9 @@ class optgroup(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5251,12 +5250,12 @@ class optgroup(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -5281,9 +5280,9 @@ class option(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5299,12 +5298,12 @@ class option(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -5329,9 +5328,9 @@ class output(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5347,12 +5346,12 @@ class output(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -5377,9 +5376,9 @@ class progress(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5395,12 +5394,12 @@ class progress(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -5425,9 +5424,9 @@ class select(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5443,12 +5442,12 @@ class select(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -5473,9 +5472,9 @@ class textarea(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5491,12 +5490,12 @@ class textarea(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -5521,9 +5520,9 @@ class details(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5539,12 +5538,12 @@ class details(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -5569,9 +5568,9 @@ class dialog(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5587,12 +5586,12 @@ class dialog(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -5617,9 +5616,9 @@ class summary(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5635,12 +5634,12 @@ class summary(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -5665,9 +5664,9 @@ class slot(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5683,12 +5682,12 @@ class slot(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
@@ -5713,9 +5712,9 @@ class template(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -5731,12 +5730,12 @@ class template(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template)
         """
-        attributes |= {
+        attributes.update({
             
-        }
+        })
         return super().__call__(*children, **attributes)
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         return {}
 
 
