@@ -3,7 +3,7 @@
 
 Random helpful functions used elsewhere
 """
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar, Union, List, Dict
 
 
 T = TypeVar('T')
@@ -11,7 +11,7 @@ K = TypeVar('K')
 V = TypeVar('V')
 
 
-def increase_indent(text: list[str], amount: int) -> list[str]:
+def increase_indent(text: List[str], amount: int) -> List[str]:
     """
     Increase the indentation of all lines in a string list
     """
@@ -58,7 +58,7 @@ def escape_attribute(attr_name: str) -> str:
         .replace('_', '-')
 
 
-def render_tag_attributes(attributes: dict[str, Any]) -> str:
+def render_tag_attributes(attributes: Dict[str, Any]) -> str:
     """
     Renders tag attributes into a string that can be embedded within a tag.
 
@@ -82,7 +82,7 @@ def render_tag_attributes(attributes: dict[str, Any]) -> str:
     ])
 
 
-def filter_attributes(attributes: dict[str, Any]) -> dict[str, Any]:
+def filter_attributes(attributes: Dict[str, Any]) -> Dict[str, Any]:
     """
     Filter out attributes where the value is `None`, so that they aren't
     rendered.
@@ -94,7 +94,7 @@ def filter_attributes(attributes: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def render_inline_element(ele: Any) -> list[str]:
+def render_inline_element(ele: Any) -> List[str]:
     """
     Render an element inline
     """
@@ -106,7 +106,7 @@ def render_inline_element(ele: Any) -> list[str]:
         return [escape_string(str(ele))]
 
 
-def render_children(children: list[Any]) -> list[str]:
+def render_children(children: List[Any]) -> List[str]:
     """
     Render child elements of tags.
 
@@ -118,13 +118,13 @@ def render_children(children: list[Any]) -> list[str]:
     return increase_indent(rendered, 2)
 
 
-def flatten_list(the_list: list[Union[T, list[T]]]) -> list[T]:
+def flatten_list(the_list: List[Union[T, List[T]]]) -> List[T]:
     """
     Flatten a list by taking any list elements and inserting their items
     individually. Note that other iterables (such as str and tuple) are not
     flattened.
     """
-    result: list[T] = []
+    result: List[T] = []
     for item in the_list:
         if isinstance(item, list):
             result.extend(item)
@@ -133,7 +133,7 @@ def flatten_list(the_list: list[Union[T, list[T]]]) -> list[T]:
     return result
 
 
-def instantiate_tag_types(elements: list[Any]) -> list[Any]:
+def instantiate_tag_types(elements: List[Any]) -> List[Any]:
     """
     Map a list so that any element e for which issubclass(e, Tag) returns True
     is instantiated
@@ -146,7 +146,7 @@ def instantiate_tag_types(elements: list[Any]) -> list[Any]:
     ))
 
 
-def dict_union(base: dict[K, V], additions: dict[K, V]) -> dict[K, V]:
+def dict_union(base: Dict[K, V], additions: Dict[K, V]) -> Dict[K, V]:
     """
     Smart union of a dictionary - if a value in `base` is `None` and the
     value in `additions` exists, the value is replaced
