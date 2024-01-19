@@ -3,7 +3,7 @@
 
 Tag base class, including rendering logic
 """
-from typing import Any, TypeVar
+from typing import Any, TypeVar, Dict, List
 from . import __util as util
 
 
@@ -54,9 +54,13 @@ class Tag:
         """
         Returns the name of the tag
         """
-        return type(self).__name__.removesuffix('_')
+        name = type(self).__name__ 
+        suf = name.rfind('_')
+        if suf >= 0:
+            return name[:suf]
+        return name
 
-    def _get_default_attributes(self) -> dict[str, Any]:
+    def _get_default_attributes(self) -> Dict[str, Any]:
         """
         Returns the default attributes for the tag
 
@@ -65,7 +69,7 @@ class Tag:
         """
         return {}
 
-    def _render(self) -> list[str]:
+    def _render(self) -> List[str]:
         """
         Renders tag and its children to a list of strings where each string is
         a single line of output
@@ -136,7 +140,7 @@ class Comment(Tag):
         # and is never used since we override _render
         return '!--'  # pragma: no cover
 
-    def _render(self) -> list[str]:
+    def _render(self) -> List[str]:
         """
         Override of render, to render comments
         """
@@ -164,7 +168,7 @@ class SelfClosingTag(Tag):
         # Self-closing tags don't allow children
         return super().__call__(**attributes)
 
-    def _render(self) -> list[str]:
+    def _render(self) -> List[str]:
         """
         Renders tag and its children to a list of strings where each string is
         a single line of output
@@ -194,11 +198,11 @@ class StylableTag(Tag):
         style: Any = None,
         **attributes: Any,
     ) -> None:
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
-        }
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
@@ -209,9 +213,9 @@ class StylableTag(Tag):
         style: Any = None,
         **attributes: Any,
     ):
-        attributes |= {
+        attributes.update({
             '_class': _class,
             'id': id,
             'style': style,
-        }
+        })
         return super().__call__(*children, **attributes)
