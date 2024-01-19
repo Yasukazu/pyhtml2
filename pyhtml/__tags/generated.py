@@ -4940,9 +4940,9 @@ class form(Tag):
 
         [View full documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
         """
-        attributes.update('method': method,
+        attributes.update({'method': method,
             'action': action,
-        )
+        })
         super().__init__(*children, **attributes)
 
     def __call__(
